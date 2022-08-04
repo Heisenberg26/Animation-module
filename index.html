@@ -1,151 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simulation Amrita-CREATE</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="revert.js"></script>
-  </head>
 
-  <body>
-    <h2 id="title">
-      Identification of the acidic/basic/neutral nature of the salt solutions
-    </h2>
-    <div class="float-container" id="frame">
-      <div class="flex-child magenta" id="salt">
-        <p id="t1">Select The Salt Solution</p>
-        <button
-          id="reset"
-          onclick="window.location.reload();alert('Reset Complete !');"
-          type="reset"
-        >
-          Reset
-        </button>
-        <div id="nacl">
-          <img
-            id="image4"
-            onclick="changeTextsodcl()"
-            src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/bottle.png"
-            alt=""
-          />
-          <p id="name1">NaCl</p>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulation Amrita-CREATE</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="revert.js"></script>
+</head>
 
-        <div id="c2h3">
-          <img
-            id="image5"
-            onclick="changeTextsoac()"
-            src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/bottle.png"
-            alt=""
-          />
-          <p id="name2">
-            C
-            <sub>2</sub>
-            H
-            <sub>3</sub>
-            NaO
-            <sub>2</sub>
-          </p>
-        </div>
-
-        <div id="fecl">
-          <img
-            id="image7"
-            src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/BROWN%20SOLUTION.svg"
-            alt=""
-          />
-          <img
-            id="image6"
-            onclick="changeTextFecl()"
-            src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/bottle.png"
-            alt=""
-          />
-          <p id="name3">
-            FeCl
-            <sub>3</sub>
-          </p>
-        </div>
+<body>
+  <h2 id="title">
+    Identification of the acidic/basic/neutral nature of the salt solutions
+  </h2>
+  <div class="float-container" id="frame">
+    <div class="flex-child magenta" id="salt">
+      <p id="t1">Select The Salt Solution</p>
+      <button id="reset" onclick="window.location.reload();alert('Reset Complete !');" type="reset">Reset</button>
+      <div id="nacl">
+        <img id="image4" onclick="changeTextsodcl()"
+          src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/bottle.png"
+          alt="" />
+        <p id="name1">NaCl</p>
       </div>
 
-      <!-- NaCl -->
-      <div class="flex-child green" id="sim" style="position: relative;">
-        <div id="nacl-bd">
-          <img
-            id="dropper-nacl"
-            src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/dropper.png"
-            alt=""
-          />
-        </div>
-        <img
-          id="nacl-shadow"
-          src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/Beakershadow%20.svg"
-          alt=""
-        />
-        <div
-          id="bottle-nacl"
-          style="
+      <div id="c2h3">
+        <img id="image5" onclick="changeTextsoac()"
+          src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/bottle.png"
+          alt="" />
+        <p id="name2">C<sub>2</sub>H<sub>3</sub>NaO<sub>2</sub></p>
+      </div>
+
+      <div id="fecl">
+        <img id="image7"
+          src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/BROWN%20SOLUTION.svg"
+          alt="" />
+        <img id="image6" onclick="changeTextFecl()"
+          src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/bottle.png"
+          alt="" />
+        <p id="name3">FeCl<sub>3</sub></p>
+      </div>
+    </div>
+
+    <!-- NaCl -->
+    <div class="flex-child green" id="sim" style="position: relative">
+      <div id="nacl-bd">
+        <img id="dropper-nacl"
+          src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/dropper.png"
+          alt="" />
+      </div>
+      <img id="nacl-shadow"
+        src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/Beakershadow%20.svg"
+        alt="" />
+      <div id="bottle-nacl" style="
             position: absolute;
             top: 300px;
             left: 150px;
             padding-left: 0px;
             padding-top: 0px;
             z-index: 1;
-          "
-        >
-          <img
-            id="b-n"
-            src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/bottle.png"
-            alt=""
-          />
-          <img
-            id="nacl-b-n"
-            src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/bottlewater.svg"
-            alt=""
-          />
-          <p id="nacl-nt">NaCl</p>
-        </div>
-        <img
-          class="image1"
-          src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/BG.jpg"
-          alt=""
-        />
-        <img
-          class="image2"
-          src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/Watch%20Glass.png"
-          alt=""
-        />
-        <img
-          class="image3"
-          src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/WATCH%20GLASS%20SHADOW.svg"
-          alt=""
-        />
-        <div id="litmus">
-          <img
-            id="board"
-            src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/LitmusBoard.png"
-            alt=""
-          />
-          <img
-            id="red-litmus"
-            src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/LitmusRed.png"
-            draggable="true"
-            ondragstart="drag(event)"
-            alt=""
-          />
-          <img
-            id="blue-litmus"
-            src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/LitmusBlue.png"
-            draggable="true"
-            ondragstart="drag(event)"
-            alt=""
-          />
-        </div>
+          ">
+        <img id="b-n"
+          src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/bottle.png"
+          alt="" />
+        <img id="nacl-b-n"
+          src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/bottlewater.svg"
+          alt="" />
+        <p id="nacl-nt">NaCl</p>
       </div>
-      <!-- NaCl End -->
+      <img class="image1"
+        src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/BG.jpg"
+        alt="" />
+      <img class="image2"
+        src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/Watch%20Glass.png"
+        alt="" />
+      <img class="image3"
+        src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/WATCH%20GLASS%20SHADOW.svg"
+        alt="" />
+      <div id="litmus">
+        <img id="board"
+          src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/LitmusBoard.png"
+          alt="">
+        <img id="red-litmus"
+          src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/LitmusRed.png"
+          draggable="true" ondragstart="drag(event)" alt="">
+        <img id="blue-litmus"
+          src="https://amrita.olabs.edu.in/olab/CHE/UPS/Identification_of_%20Acidic_Basic_and_Neutral_nature_of_salt_solution/images/LitmusBlue.png"
+          draggable="true" ondragstart="drag(event)" alt="">
+      </div>
     </div>
-    <script src="./revert.js"></script>
-  </body>
+    <!-- NaCl End -->
+  </div>
+  <script src="./revert.js"></script>
+</body>
+
 </html>
