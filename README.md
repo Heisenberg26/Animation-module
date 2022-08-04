@@ -1,1 +1,1 @@
-# Animation-module
+# Animations / Lab Experiments using JS
